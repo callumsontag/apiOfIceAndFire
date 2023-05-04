@@ -1,0 +1,12 @@
+{
+  "name": "api-of-ice-and-fire",
+  "version": "1.0.0",
+  "description": "script to query data from api of ice and fire",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Callum Sontag",
+  "license": "ISC"
+}

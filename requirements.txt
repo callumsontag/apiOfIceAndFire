@@ -1,0 +1,10 @@
+initialise an npm package
+
+create a node js script that makes a http get request to an endpoint in the api of ice and fire
+
+server will send a http response including the requested data
+
+https://anapioficeandfire.com/api/characters/583
+
+look at docs page for help https://anapioficeandfire.com/Documentation
+

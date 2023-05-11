@@ -8,3 +8,19 @@ https://anapioficeandfire.com/api/characters/583
 
 look at docs page for help https://anapioficeandfire.com/Documentation
 
+
+Part 1
+Write a node. javascript application that queries this endpoint: https://anapioficeandfire.com/api/characters/583
+
+You should display the following output in the console
+
+Character: Jon Snow
+Actor: Kit Harington
+
+Use a constant at the top of the file to contain the character ID, in this case it is 583. If you change that and re-run the 
+application then you should see the details of the relevant character.
+
+
+Part 2
+Write a few short paragraphs in a google doc explaining how your code works. Explain what functions there are and what they do. What inputs does each function take, and what does it return. When does each of your functions get called, even the anonymous arrow functions.
+Explain each line in the code in the order the interpreter would execute it.

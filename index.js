@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const characterId = "583";
+const characterInput = "583";
 
 const characterRequest = (characterId) => {
   let partUrl = "https://anapioficeandfire.com/api/characters/";
@@ -14,4 +14,4 @@ const characterRequest = (characterId) => {
   });
 };
 
-characterRequest(characterId);
+characterRequest(characterInput);

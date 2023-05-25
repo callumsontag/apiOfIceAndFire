@@ -3,12 +3,9 @@ const fs = require("fs");
 
 const url = "https://anapioficeandfire.com/api/books/1";
 
-const characterPov = (api) => {
+const characterPov = async (api) => {
   console.log("About to make API request");
-  axios({
-    method: "get",
-    url: api,
-  })
+  await axios(api)
     .then((response) => {
       const result = response.data.povCharacters;
       console.log(result);

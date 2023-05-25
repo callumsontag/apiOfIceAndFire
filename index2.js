@@ -6,7 +6,7 @@ async function getCharacter() {
 
   // get list of pokemon
   const response = await axios(bookId);
-  const povCharacters = await response.data.povCharacters;
+  const povCharacters = response.data.povCharacters;
   console.log(povCharacters);
 
   const char1 = await axios(povCharacters[0]);

@@ -9,15 +9,6 @@ async function getCharacter() {
   const povCharacters = await response.data.povCharacters;
   console.log(povCharacters);
 
-  const loop = povCharacters.forEach((api) => {
-    let html = "\n";
-    axios(api).then((response) => {
-      html += `<div><ul><li>${response.data.name} - ${response.data.playedBy}</li></ul></div>`;
-    });
-  });
-
-  console.log(html);
-
   const char1 = await axios(povCharacters[0]);
   const char2 = await axios(povCharacters[1]);
   const char3 = await axios(povCharacters[2]);

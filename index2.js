@@ -12,9 +12,9 @@ async function getCharacter() {
 
   for (let i = 0; i < povCharacters.length; i++) {
     const charArr = [];
-    let character = await axios(povCharacters[i]);
-    let charName = character.data.name;
-    let playedBy = character.data.playedBy;
+    const character = await axios(povCharacters[i]);
+    const charName = character.data.name;
+    const playedBy = character.data.playedBy;
     html += `<div><ul><li>${charName} - ${playedBy}</li></ul></div>`;
   }
 

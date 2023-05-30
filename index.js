@@ -4,28 +4,28 @@ const fs = require("fs");
 const url = "https://anapioficeandfire.com/api/books/1";
 
 const characterPov = async (api) => {
-  console.log("About to make API request");
   await axios(api)
     .then((response) => {
       const result = response.data.povCharacters;
-      console.log(result);
       return result;
     })
     .then((result) => {
-      console.log("make api request on each of the elements of array");
-      result.forEach((api) => {
-        axios({
-          method: "get",
-          url: api,
-        }).then((response) => {
-          const name = response.data.name;
-          const playedBy = response.data.playedBy;
-          let html = "\n";
-          html.append(`<ul><li>${name} - ${playedBy}</li></ul>`);
-          fs.writeFile("output.html", html, (err) => {
-            if (err) throw err;
-          });
-        });
+      console.log(result);
+      result.forEach((newApi) => {
+        console.log(newApi);
+        return axios(newApi);
+      });
+    })
+    .then((information) => {
+      const name = information.data.name;
+      const playedBy = information.data.playedBy;
+      let html = "\n";
+      html += `<ul><li>${name} - ${playedBy}</li></ul>`;
+      return html;
+    })
+    .then((html) => {
+      fs.writeFile("output.html", html, (err) => {
+        if (err) throw err;
       });
     });
 };
@@ -39,3 +39,11 @@ characterPov(url);
 // };
 
 // fileWrite(response);
+
+// firstPromiseFunction()
+// .then((firstResolveVal) => {
+//   return secondPromiseFunction(firstResolveVal);
+// })
+// .then((secondResolveVal) => {
+//   console.log(secondResolveVal);
+// });

@@ -10,40 +10,15 @@ const characterPov = async (api) => {
       return result;
     })
     .then((result) => {
-      console.log(result);
-      result.forEach((newApi) => {
-        console.log(newApi);
-        return axios(newApi);
-      });
-    })
-    .then((information) => {
-      const name = information.data.name;
-      const playedBy = information.data.playedBy;
-      let html = "\n";
-      html += `<ul><li>${name} - ${playedBy}</li></ul>`;
-      return html;
-    })
-    .then((html) => {
-      fs.writeFile("output.html", html, (err) => {
-        if (err) throw err;
-      });
+      for (let i = 0; i < result.length; i++) {
+        let charArr = [];
+        let playedByArr = [];
+        let apiResult = axios(result[i]);
+        charArr.push(apiResult.data.name);
+        playedByArr.push(apiResult.data.playedBy);
+      }
+      console.log(charArr, playedByArr);
     });
 };
 
 characterPov(url);
-
-// const fileWrite = (data) => {
-//   fs.writeFile("output.html", data, (err) => {
-//     if (err) throw err;
-//   });
-// };
-
-// fileWrite(response);
-
-// firstPromiseFunction()
-// .then((firstResolveVal) => {
-//   return secondPromiseFunction(firstResolveVal);
-// })
-// .then((secondResolveVal) => {
-//   console.log(secondResolveVal);
-// });
